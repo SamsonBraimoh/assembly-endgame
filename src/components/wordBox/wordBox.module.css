@@ -1,0 +1,13 @@
+.letterBox{
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-bottom: 1px solid #F9F4DA;
+    color: #F9F4DA;
+    background-color: #323232;
+    font-weight: 700;
+}
+.letterContainer{
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.2rem;
+}

@@ -1,0 +1,18 @@
+.keyContainer{
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 50%;
+    justify-content: center;
+}
+.key{
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border: 1px solid #D7D7D7;
+    color: #1E1E1E;
+    background-color: #FCBA29;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}

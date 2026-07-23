@@ -1,0 +1,22 @@
+.heading{
+    width: 40%;
+    text-align: center;
+}
+h1{
+    color: #F9F4DA;
+}
+p{
+    color: #8E8E8E;
+}
+.progressMessage{
+    background-color: #7A5EA7;
+    border: 2px dashed #282726;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #F9F4DA;
+    margin-block: 40px;
+}
+ 

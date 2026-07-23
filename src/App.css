@@ -1,0 +1,18 @@
+body{
+    font-family: "Hanken Grotesk", sans-serif;
+    background-color: #282726;
+}
+main{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    justify-self: center;
+    /* border: 1px solid red; */
+}
+@media (max-width: 767px) { /* Mobile */
+    main{
+        width: 100%;
+    }
+  }

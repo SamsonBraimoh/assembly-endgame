@@ -1,0 +1,13 @@
+
+
+.languagesWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    gap: 0.2rem;
+    justify-content: center;
+}
+.lang{
+    padding: 0.5rem;
+    border-radius: 5px;
+}

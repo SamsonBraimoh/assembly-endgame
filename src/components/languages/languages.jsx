@@ -1,7 +1,13 @@
 
 import style from "./languages.module.css"
 
-export default function LanguageContainer(){
+export default function LanguageContainer( {guessedLetter, word } ){
+
+    const wrongGuesses = guessedLetter.filter( (letter) =>  { return !word.includes(letter)})
+    console.log(wrongGuesses);
+    const wrongGuesseCount = wrongGuesses.length
+    console.log(wrongGuesseCount)
+
     const Languages = [
         {
             name: "HTML",

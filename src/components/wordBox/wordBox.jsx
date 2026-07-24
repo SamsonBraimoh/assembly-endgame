@@ -1,10 +1,12 @@
 import { useState } from "react"
 import style from "./wordBox.module.css"
 
-export default function Boxes(){
-    const [word, setWord] = useState("react")
+export default function Boxes({word, setWord, guessedLetter}){
     
-    const letters = word.split("").map(letter => <span key={letter} className={style.letterBox}>{letter.toUpperCase()}</span>)
+    
+    const letters = word.split("").map(letter => <span 
+        key={letter} 
+        className={style.letterBox}>{guessedLetter.includes(letter) ? letter.toUpperCase() : ""}</span>)
     console.log(letters)
     
     return(

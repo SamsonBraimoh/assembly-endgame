@@ -4,7 +4,7 @@ import clsx from "clsx"
 
 
 
-export default function Keyboard( {guessedLetter, setGuessedLetter, word} ){
+export default function Keyboard( {guessedLetter, setGuessedLetter, word, isGameOver} ){
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -48,6 +48,7 @@ export default function Keyboard( {guessedLetter, setGuessedLetter, word} ){
             <section className={style.keyContainer}>
                 {keyboardElements}
             </section>
+            {isGameOver && <button className={style.newGame}>New Game</button>}
         </>
     )
 }

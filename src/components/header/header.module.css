@@ -2,21 +2,38 @@
     width: 40%;
     text-align: center;
 }
-h1{
+.h1{
     color: #F9F4DA;
 }
-p{
+.p{
     color: #8E8E8E;
 }
 .progressMessage{
-    background-color: #7A5EA7;
-    border: 2px dashed #282726;
+    /* background-color: #10A95B; */
+    /* border: 2px dashed #282726; */
     height: 60px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     color: #F9F4DA;
     margin-block: 40px;
 }
- 
+h2{
+    margin-bottom: 0;
+}
+p{
+    margin-top: 0;
+}
+ .won{
+    background-color: #10A95B;
+ }
+ .lost{
+    background-color: #BA2A2A;
+ }
+ .missed{
+    background-color: #7A5EA7;
+    border: 2px dashed #282726;
+    
+ }

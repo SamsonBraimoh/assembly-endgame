@@ -22,3 +22,15 @@
 .wrong{
     background-color: #EC5D49;
 }
+
+.newGame{
+    cursor: pointer;
+    margin-top: 2.5rem;
+    padding-block: 0.8rem;
+    padding-inline: 5rem;
+    background-color: #11B5E5;
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+}

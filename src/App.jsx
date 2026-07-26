@@ -5,6 +5,8 @@ import Header from './components/header/header'
 import LanguageContainer from './components/languages/languages'
 import Boxes from './components/wordBox/wordBox'
 import Keyboard from './components/keyboard/keyboard'
+import {words} from './utils/word'
+import Confetti from "react-confetti"
 
 export default function App() {
 
@@ -55,9 +57,17 @@ export default function App() {
         color: "#F9F4DA",
     },
 ]
+
+function getRandomWord(){
+  const randomIndex =  Math.floor(Math.random() * words.length - 1) 
+  return words[randomIndex]
+}
+// console.log(getRandomWord())
+
+const numGuessesLeft = Languages.length - 1
   
   const [guessedLetter, setGuessedLetter] = useState([])
-  const [word, setWord] = useState("react")
+  const [word, setWord] = useState(() => getRandomWord())
 
   const wrongGuesses = guessedLetter.filter( (letter) =>  { return !word.includes(letter)})
     // console.log(wrongGuesses);
@@ -72,19 +82,22 @@ export default function App() {
 
     const isGameOver = gameWon || gameLost
     // console.log(isGameOver)
+    const lastGuessedLetter = guessedLetter[guessedLetter.length - 1];
 
   
 
   return (
     <>
       <main>
-          <Header word = {word} guessedLetter = {guessedLetter} isGameOver={isGameOver} gameWon={gameWon} gameLost={gameLost} Languages={Languages} wrongGuesseCount={wrongGuesseCount} />
+         {gameWon && <Confetti recycle={false} numberOfPieces={1000} />}
+          
+          <Header word = {word} guessedLetter = {guessedLetter} isGameOver={isGameOver} gameWon={gameWon} gameLost={gameLost} Languages={Languages} wrongGuesseCount={wrongGuesseCount} lastGuessedLetter={lastGuessedLetter} />
           
           <LanguageContainer wrongGuesseCount={wrongGuesseCount} Languages={Languages} />
           
-          <Boxes word = {word} setWord={setWord} guessedLetter = {guessedLetter}  />
+          <Boxes word = {word} setWord={setWord} guessedLetter = {guessedLetter} lastGuessedLetter={lastGuessedLetter} numGuessesLeft ={numGuessesLeft } gameLost={gameLost}  />
           
-          <Keyboard guessedLetter = {guessedLetter} word={word} setGuessedLetter={setGuessedLetter} isGameOver={isGameOver}/>
+          <Keyboard guessedLetter = {guessedLetter} word={word} setGuessedLetter={setGuessedLetter} isGameOver={isGameOver} setWord={setWord} getRandomWord={getRandomWord}/>
       </main>
         
     </>

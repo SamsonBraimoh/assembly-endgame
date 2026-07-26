@@ -35,5 +35,5 @@ p{
  .missed{
     background-color: #7A5EA7;
     border: 2px dashed #282726;
-    
+    font-style: italic;
  }

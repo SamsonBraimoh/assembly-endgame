@@ -4,7 +4,7 @@ import clsx from "clsx"
 
 
 
-export default function Keyboard( {guessedLetter, setGuessedLetter, word, isGameOver} ){
+export default function Keyboard( {guessedLetter, setGuessedLetter, word, setWord, isGameOver, getRandomWord} ){
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -23,6 +23,9 @@ export default function Keyboard( {guessedLetter, setGuessedLetter, word, isGame
         return (
             <button 
             key={key} 
+            disabled={isGameOver}
+            aria-disabled={guessedLetter.includes(key)}
+            aria-label={`Letter ${key}`}
             onClick={() => addGuessedLetter(key)}
             className={`${style.key} ${className}`}> {key.toUpperCase()}
             </button>
@@ -43,12 +46,17 @@ export default function Keyboard( {guessedLetter, setGuessedLetter, word, isGame
          setGuessedLetter(prevletters => prevletters.includes(letters) ? prevletters : [...prevletters, letters]) 
     }
 
+    const startAnewGame = ()=>{
+        setWord(getRandomWord)
+        setGuessedLetter([])
+    }
+
     return(
         <>
             <section className={style.keyContainer}>
                 {keyboardElements}
             </section>
-            {isGameOver && <button className={style.newGame}>New Game</button>}
+            {isGameOver && <button onClick={startAnewGame} className={style.newGame}>New Game</button>}
         </>
     )
 }

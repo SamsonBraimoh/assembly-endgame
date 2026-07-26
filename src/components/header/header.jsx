@@ -2,13 +2,13 @@ import clsx from "clsx"
 import style from "./header.module.css"
 import GetFarewellText from "../../utils/gameStatus"
 
-export default function Header({guessedLetter, word, isGameOver, gameWon, gameLost, Languages, wrongGuesseCount }){
+export default function Header({guessedLetter, word, isGameOver, gameWon, gameLost, Languages, wrongGuesseCount, lastGuessedLetter }){
 
        
 
-       const lastGuessedLetter = guessedLetter[guessedLetter.length - 1];
+      
        const islastGuessedLetterCorrect = lastGuessedLetter && !word.includes(lastGuessedLetter);
-       console.log(islastGuessedLetterCorrect)
+    //    console.log(islastGuessedLetterCorrect)
 
        const renderGameStatus = ()=> {
         if(!isGameOver && islastGuessedLetterCorrect)
@@ -37,9 +37,9 @@ export default function Header({guessedLetter, word, isGameOver, gameWon, gameLo
             <section className={style.heading}>
                 <h1 className={style.h1}>Assembly: Endgame</h1>
                 <p className={style.p}>Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
-                <div  className={`${style.progressMessage} ${gameStatusClass}`}>
+                <section  className={`${style.progressMessage} ${gameStatusClass}`} aria-live="polite" role="status">
                    {renderGameStatus()}
-                </div>
+                </section>
             </section>
         </>
     )
